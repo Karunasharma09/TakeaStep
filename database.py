@@ -30,10 +30,6 @@ def deletepost():
 
 if __name__ == '__main__':
     createtable()
-    addrow("guwahati","jdncla;lks,;a",66,"december",8,"bijd")
-    v = search("Guwahati")
-    print(v)
-    var = ("a",)
-    print(type(var))
+    
     
 
