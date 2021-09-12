@@ -24,9 +24,9 @@ def web2():
     area = request.form['area']
     des = request.form['des']
     image = request.files['image']
-    image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'temp/upload.jpg'))
+    image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'static/upload.jpg'))
     x = datetime.datetime.now()
-    database.addrow(city,des,x.strftime("%d"),x.strftime("%B"),x.strftime("%Y"),area, 'temp/upload.jpg' )
+    database.addrow(city,des,x.strftime("%d"),x.strftime("%B"),x.strftime("%Y"),area, 'static/upload.jpg' )
 
     return render_template('post.html',city = city,des = des,area = area)
 

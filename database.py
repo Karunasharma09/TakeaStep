@@ -32,7 +32,7 @@ def search (city):
     # print(result[1][7])
     i = 1
     for img in result:
-        f = open(f"temp/images{i}.jpg" , "wb")
+        f = open(f"static/images{i}.jpg" , "wb")
         f.write(img[7])
         f.close()
         i += 1

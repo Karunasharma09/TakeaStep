@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Take-A-Step</title>
+    <link rel="icon" href="../static/city.png">
     <style>
 
       .footer {
@@ -33,7 +34,7 @@
       }
 
       .left {
-        width: 60%;
+        width: 50%;
       }
 
       .right {
@@ -73,9 +74,9 @@
     </style>
   </head>
   <body>
-    <div class="header" style="font-family: algerian ; ">
-        <h1>Header</h1>
-        <p>My supercool header</p>
+    <div class="header" style="font-family: sans-serif ; ">
+        <h1>Take-A-Step</h1>
+        <p>From Awareness to Solution</p>
         <div class = "row1">
             <!-- <div class = "column1 c1"> -->
                 <img
@@ -112,7 +113,7 @@
     
     
     <div class="row">
-        <div class="column left">
+        <div class="column left" style="padding: 5%;" >
         <div class = "toppics">
         <h2 style="text-align: center;">Awareness of Swachh Bharat Abhiyan</h2>
         <p style="color: darkblue; font-size: large; ">The Ministry of Tourism (MoT), with the aim of maintaining cleanliness at tourist destinations across the country has observed awareness campaign on cleanliness by undertaking a fortnightly awareness drive called “Swachhta Pakhwada”.</p>
@@ -127,24 +128,27 @@
         
         </div>
         </div>
-      <div class="column right" style="text-align: center;"  >
+      <div class="column right" style="text-align: center; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif "  >
         <h2>Search for issues </h2>
         <h4>Enter the name of the city :</h4>
         <form action="/search" method="GET" >
           <input type="text" name="citysearch" >
           <input type="submit" name ="Submit" >
         </form>
+        <br><br>
+        <hr size="2" width="90%" color="red"> 
+        <br>
         <form action="/post" method="post" enctype="multipart/form-data">
           <h2>Post your issues</h2>
-          <h4>City name:</h4>
-          <input type="text" id="city" name = "city">
-          <h4>Area name:</h4>
-          <input type="text" id="area" name = "area">
+          <h4>City name:  &nbsp;
+          <input type="text" id="city" name = "city"></h4>
+          <h4>Area name:  &nbsp;
+          <input type="text" id="area" name = "area"></h4>
           <!-- <input type="submit" value="Upload" name="submit"> -->
           <!-- <h4>Date : </h4>
           <input type="date" id = "date" name = "date" >  -->
           <h4>Description </h4>
-          <textarea name="des" id="des" cols="" rows=""></textarea>
+          <textarea name="des" id="des" cols="50" rows="6"></textarea>
           <h4>Select image to upload: </h4>
           <input type="file" name="image" id="image">
           <br><br>
