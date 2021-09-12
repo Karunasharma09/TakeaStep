@@ -12,7 +12,7 @@ curr = conn.cursor()
 def createtable():
     curr.execute("DROP TABLE IF EXISTS posts")
     curr.execute(""" create table posts ( 
-        id integer primary key autoincrement,
+        id SERIAL NOT NULL PRIMARY KEY,
         city text ,
         des text ,
         date integer,
