@@ -71,21 +71,23 @@
           <input type="submit" name ="Submit" >
         </form>
     <br><br><br><br>
-    {% for a in posts %}
+    {% for i in range(0,n) %}
     <div class = 'row'>
         <div class = 'column left'>
         
-            <h2>Post Number : {{ a[0] }}</h2>
+            <h2>Post Number : {{ posts[i][0] }}</h2>
             <!-- <br> -->
-            <h2>City name : {{ a[1] }}</h2>
+            <h2>City name : {{ posts[i][1] }}</h2>
             <!-- <br> -->
-            <h2>Area name : {{ a[6] }}</h2>
+            <h2>Area name : {{ posts[i][6] }}</h2>
             <!-- <br> -->
-            <h2>Date of upload : {{ a[3] }} {{ a[4] }} {{ a[5] }}</h2>
+            <h2>Date of upload : {{ posts[i][3] }} {{ posts[i][4] }} {{ posts[i][5] }}</h2>
             <br>
         </div>
         <div class = 'column right'>
-            <h4>Description : {{ a[2] }}</h4>
+            <h4>Description : {{ posts[i][2] }}</h4>
+            for 
+            <img src="../temp/images{{ i+1 }}.jpg">
             <br>
         </div>
     </div>

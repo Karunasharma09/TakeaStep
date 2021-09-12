@@ -15,7 +15,8 @@ def index():
 def web1():
     city = request.args['citysearch']
     view = database.search(city)
-    return render_template('search.html',cityname = city,posts = view )
+    
+    return render_template('search.html',cityname = city,posts = view , n=len(view))
 
 @app.route('/post', methods = ['POST'])
 def web2():
@@ -23,9 +24,9 @@ def web2():
     area = request.form['area']
     des = request.form['des']
     image = request.files['image']
-    image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'static/image1.jpg'))
+    image.save(os.path.join(app.config['UPLOAD_FOLDER'], 'temp/upload.jpg'))
     x = datetime.datetime.now()
-    database.addrow(city,des,x.strftime("%d"),x.strftime("%B"),x.strftime("%Y"),area)
+    database.addrow(city,des,x.strftime("%d"),x.strftime("%B"),x.strftime("%Y"),area, 'temp/upload.jpg' )
 
     return render_template('post.html',city = city,des = des,area = area)
 

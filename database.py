@@ -14,22 +14,34 @@ def createtable():
         date integer,
         month text,
         year integer,
-        area text ) """)
+        area text,
+        photo blob ) """)
     conn.commit()
 
-def addrow(city , des , date , month , year , area ):
-    curr.execute('insert into posts (city , des , date , month , year , area ) values (?,?,?,?,?,?)', (city, des , date , month , year , area ) )
+def addrow(city , des , date , month , year , area , photopath ):
+    f = open(photopath, 'rb' )
+    img = f.read()
+    binary = sqlite3.Binary(img)
+    curr.execute('insert into posts (city , des , date , month , year , area , photo ) values (?,?,?,?,?,?,?)', (city, des , date , month , year , area , binary) )
     conn.commit()
+    f.close()
 
 def search (city):
     curr.execute('select * from posts where city like ?',("%"+ city +"%",))
-    return curr.fetchall()
+    result = curr.fetchall()
+    # print(result[1][7])
+    i = 1
+    for img in result:
+        f = open(f"temp/images{i}.jpg" , "wb")
+        f.write(img[7])
+        f.close()
+        i += 1
+    return result
 
 def deletepost():
     pass
 
 if __name__ == '__main__':
     createtable()
-    
     
 
