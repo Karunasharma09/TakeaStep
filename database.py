@@ -1,8 +1,12 @@
 import os
 os.chdir(__file__.replace(os.path.basename(__file__),''))
-import sqlite3
+# import sqlite3
+import psycopg2
 
-conn = sqlite3.connect('posts.db', check_same_thread=False)
+DATABASE_URL = os.environ['DATABASE_URL']
+
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+# conn = sqlite3.connect('posts.db', check_same_thread=False)
 curr = conn.cursor()
 
 def createtable():
@@ -15,19 +19,19 @@ def createtable():
         month text,
         year integer,
         area text,
-        photo blob ) """)
+        photo bytea ) """)
     conn.commit()
 
 def addrow(city , des , date , month , year , area , photopath ):
     f = open(photopath, 'rb' )
     img = f.read()
-    binary = sqlite3.Binary(img)
-    curr.execute('insert into posts (city , des , date , month , year , area , photo ) values (?,?,?,?,?,?,?)', (city, des , date , month , year , area , binary) )
+    binary = psycopg2.Binary(img)
+    curr.execute('insert into posts (city , des , date , month , year , area , photo ) values (%s,%s,%s,%s,%s,%s,%s)', (city, des , date , month , year , area , binary) )
     conn.commit()
     f.close()
 
 def search (city):
-    curr.execute('select * from posts where city like ?',("%"+ city +"%",))
+    curr.execute('select * from posts where city like %s',("%"+ city +"%",))
     result = curr.fetchall()
     # print(result[1][7])
     i = 1
