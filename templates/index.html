@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+
+      .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: red;
+        color: white;
+        text-align: center;
+      }
+      
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+        }
+      }
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      .column {
+        float: left;
+      }
+
+      .left {
+        width: 60%;
+      }
+
+      .right {
+        width: 40%;
+        background-color: rgba(241, 213, 177, 0.384);
+        padding: 0%;
+      }
+      .header {
+        padding: 2px;
+        text-align: center;
+        background: #05f57d;
+        color: rgb(249, 250, 250);
+        font-size: 30px;
+        background-image: url("https://www.incimages.com/uploaded_files/image/1920x1080/getty_174525514_270141.jpg");
+        width: auto;
+        background-position: center;
+        background-size: cover;
+      }
+      .header1 {
+        padding: 2px;
+        text-align: center;
+        background: #ecdd0b;
+        color: rgb(249, 250, 250);
+        font-size: 30px;
+      }
+      .header2 {
+        padding: 2px;
+        text-align: center;
+        background: #ecdd0b;
+        color: rgb(249, 250, 250);
+        font-size: 30px;
+      }
+      .para{
+          color: darkblue;
+          text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header" style="font-family: algerian ; ">
+        <h1>Header</h1>
+        <p>My supercool header</p>
+        <div class = "row1">
+            <!-- <div class = "column1 c1"> -->
+                <img
+                src="https://www.nic.in/wp-content/uploads/2021/04/swachh-01.jpg"
+                alt="logo"
+                width="120px"
+                />
+            <!-- </div>
+            <div class = "column1 c2"> -->
+                <img
+                src="https://www.nic.in/wp-content/uploads/2021/04/swachh-01.jpg"
+                alt="logo"
+                width="120px"
+                />
+            <!-- </div>
+            <div class = "column1 c3"> -->
+                <img
+                src="https://www.nic.in/wp-content/uploads/2021/04/swachh-01.jpg"
+                alt="logo"
+                width="120px"
+                />
+            <!-- </div>
+            <div class = "column1 c4"> -->
+                <img
+                src="https://www.nic.in/wp-content/uploads/2021/04/swachh-01.jpg"
+                alt="logo"
+                width="120px"
+                />
+            
+            <!-- </div> -->
+        </div>
+    </div>
+    <br />
+    
+    
+    <div class="row">
+        <div class="column left">
+        <div class = "toppics">
+        <h2 style="text-align: center;">Awareness of Swachh Bharat Abhiyan</h2>
+        <p style="color: darkblue; font-size: large; ">The Ministry of Tourism (MoT), with the aim of maintaining cleanliness at tourist destinations across the country has observed awareness campaign on cleanliness by undertaking a fortnightly awareness drive called “Swachhta Pakhwada”.</p>
+        </div>
+        <div class = "para">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta minus,
+              eveniet saepe maxime debitis id ea eos recusandae facilis voluptates,
+            ab quos quo similique facere. Fugiat ratione natus voluptas magni.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum nostrum dicta nisi modi ipsa pariatur nemo cum officia ratione odit tempora, accusantium officiis, ea iusto sapiente. Expedita ut repudiandae necessitatibus.
+            </p>
+        
+        </div>
+        </div>
+      <div class="column right" style="text-align: center;"  >
+        <h2>Search for issues </h2>
+        <h4>Enter the name of the city :</h4>
+        <form action="/search" method="GET" >
+          <input type="text" name="citysearch" >
+          <input type="submit" name ="Submit" >
+        </form>
+        <form action="/post" method="post" enctype="multipart/form-data">
+          <h2>Post your issues</h2>
+          <h4>City name:</h4>
+          <input type="text" id="city" name = "city">
+          <h4>Area name:</h4>
+          <input type="text" id="area" name = "area">
+          <!-- <input type="submit" value="Upload" name="submit"> -->
+          <!-- <h4>Date : </h4>
+          <input type="date" id = "date" name = "date" >  -->
+          <h4>Description </h4>
+          <textarea name="des" id="des" cols="" rows=""></textarea>
+          <h4>Select image to upload: </h4>
+          <input type="file" name="image" id="image">
+          <br><br>
+        <input type="submit" value="submit" name="submit">
+        <!-- <button type="reset" value = "Reset">Reset</button> -->
+        </form>
+        <div class = "para">
+        <p>
+          
+        </p>
+        </div>
+      </div>
+      </div>
+    <div class="footer">
+      <p>Footer</p>
+    </div>
+    </div>
+  </body>
+</html>

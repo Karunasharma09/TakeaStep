@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        <!-- .header{
+            min-height: 30%;
+            width : 100%;
+            background-image:url('https://mcdn.wallpapersafari.com/medium/55/80/ovRh5L.jpg ');
+            background-position: center;
+            background-size: cover;
+            position: relative;
+
+        } -->
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+          }
+
+        @media screen and (max-width: 600px) {
+            .column {
+              width: 100%;
+            }
+          }
+          .row:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+    
+          .column {
+            float: left;
+          }
+    
+          .left {
+            width: 40%;
+          }
+    
+          .right {
+            width: 60%;
+            background-color: rgba(241, 213, 177, 0.384);
+            padding: 0%;
+          }
+
+    </style>
+</head>
+<body>
+    <div style="background-image: url('https://mcdn.wallpapersafari.com/medium/55/80/ovRh5L.jpg') ;
+        min-height: 5cm;
+        width: 100%;
+        background-position: center;
+        
+        ";>
+        <div style="color: aliceblue; text-align:center; padding : 9%; font-size: 100px; font-weight: bold ;";>
+            {{ cityname }} 
+        </div>
+    </div>
+    <h2>Search for issues </h2>
+        <h4>Enter the name of the city :</h4>
+        <form action="/search" method="GET" >
+          <input type="text" name="citysearch" >
+          <input type="submit" name ="Submit" >
+        </form>
+    <br><br><br><br>
+    {% for a in posts %}
+    <div class = 'row'>
+        <div class = 'column left'>
+        
+            <h2>Post Number : {{ a[0] }}</h2>
+            <!-- <br> -->
+            <h2>City name : {{ a[1] }}</h2>
+            <!-- <br> -->
+            <h2>Area name : {{ a[6] }}</h2>
+            <!-- <br> -->
+            <h2>Date of upload : {{ a[3] }} {{ a[4] }} {{ a[5] }}</h2>
+            <br>
+        </div>
+        <div class = 'column right'>
+            <h4>Description : {{ a[2] }}</h4>
+            <br>
+        </div>
+    </div>
+    <br>
+    <hr size="8" width="90%" color="red"> 
+    <br>
+    {% endfor %}
+
+    <div class="footer">
+        <p>Footer</p>
+    </div>
+      
+</body>
+</html>
