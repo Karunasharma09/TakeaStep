@@ -22,7 +22,7 @@
             left: 0;
             bottom: 0;
             width: 100%;
-            background-color: red;
+            background-color:rgb(43, 172, 43);
             color: white;
             text-align: center;
           }
@@ -36,7 +36,7 @@
             content: "";
             display: table;
             clear: both;
-            background-color: rgba(241, 213, 177, 0.384);
+            background-color:  rgb(red, green, blue);
           }
     
           .column {
@@ -60,14 +60,16 @@
     </style>
 </head>
 <body>
-    <div style="background-image: url('https://mcdn.wallpapersafari.com/medium/55/80/ovRh5L.jpg') ;
+    <div style="background-image: url('../static/searchhead.png') ;
         min-height: 5cm;
         width: 100%;
         background-position: center;
         
         ";>
-        <div style="color: aliceblue; text-align:center; padding : 9%; font-size: 100px; font-weight: bold ;";>
+        <div style="color: aliceblue; text-align:center; padding : 3%; font-size: 50px; font-weight: bold ;";>
             {{ cityname }} 
+            <br>
+            <p style="font-size: 25px;" >- Search Results</p>
         </div>
     </div>
     <div align="center" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ">
@@ -80,7 +82,7 @@
     </div>
     <br><br><br><br>
     {% for i in range(0,n) %}
-    <div class = 'row' style="background-color: rgba(241, 213, 177, 0.384); padding:3% ">
+    <div class = 'row' style="background-color: #dAFff1; padding:3% ">
         <div class = 'column left'>
         
             <!-- <h2>Post Number : {{ posts[i][0] }}</h2> -->
@@ -100,12 +102,12 @@
         </div>
     </div>
     <br>
-    <hr size="8" width="90%" color="red"> 
+    <hr size="8" width="90%" color="green"> 
     <br>
     {% endfor %}
-
+    <br> &nbsp;
     <div class="footer">
-        <p>Footer</p>
+      <p style="font-family: Arial, Helvetica, sans-serif;" > A Platform to spread awareness and post issues of your surroundings and get them noticed by respective authorities.  </p>
     </div>
       
 </body>

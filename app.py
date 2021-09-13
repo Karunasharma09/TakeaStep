@@ -9,7 +9,7 @@ app.config['UPLOAD_FOLDER'] = os.getcwd()
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template("index.html",sub = False)
 
 @app.route('/search')
 def web1():
@@ -28,7 +28,7 @@ def web2():
     x = datetime.datetime.now()
     database.addrow(city,des,x.strftime("%d"),x.strftime("%B"),x.strftime("%Y"),area, 'static/upload.jpg' )
 
-    return render_template('post.html',city = city,des = des,area = area)
+    return render_template('index.html', sub = True )
 
 if __name__ == '__main__':
     app.run()
