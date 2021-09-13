@@ -31,7 +31,7 @@ def addrow(city , des , date , month , year , area , photopath ):
     f.close()
 
 def search (city):
-    curr.execute('select * from posts where city like %s',("%"+ city +"%",))
+    curr.execute('select * from posts where city ilike %s',("%"+ city +"%",))
     result = curr.fetchall()
     # print(result[1][7])
     i = 1
